@@ -57,9 +57,8 @@ SHAP: For model interpretation and explanation
 LIME: For model interpretation and explanation
 Pickle: To save and load machine learning models
 
-**Videos of Web Application**
+**Video of Web Application**
 
 [Home Page (Prediction Form)
 Prediction Result](https://github.com/060205b/Road_traffic_severity_prediction_with_webframe_work/blob/main/Prediction_video.mp4)
-Both are included in the prediction video.
 
