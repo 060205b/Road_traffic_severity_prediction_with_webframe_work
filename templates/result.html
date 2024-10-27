@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            min-height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            position: relative; /* For absolute positioning */
+            overflow: hidden; /* Ensures no scrollbars appear */
+        }
+
+        /* Video Background Styling */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Places video behind content */
+        }
+
+        .result-container {
+            text-align: center;
+            padding: 20px;
+            width: 35%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative;
+            z-index: 1; /* Places container above the video */
+        }
+
+        .btn-primary {
+            background-color: #4b9ae9; /* Set your desired background color */
+            color: rgb(23, 22, 22); /* Set the text color to white */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Optional: Add border radius */
+            padding: 10px 20px; /* Add some padding */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .image-container-wrapper {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .image-container {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Video Background -->
+    <video class="video-background" autoplay loop muted>
+        <source src="{{ url_for('static', filename='video/result_bg_video.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Transparent Prediction Form Container -->
+    <div class="result-container">
+        <h1>Road Traffic Accident Severity Prediction</h1>
+        <p><strong>{{ prediction }}</strong></p>
+        <p><strong>Suggestion:</strong> {{ suggestion }}</p>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/'">Predict Again</button>
+    </div>
+
+    <div class="image-container-wrapper">
+        <div class="image-container">
+            <h2>Lime plot</h2>
+            <img src="{{ url_for('static', filename='image/lime_plot.png') }}" alt="Image 1">
+        </div>
+        <div class="image-container">
+            <h2>Shap plot</h2>
+            <img src="{{ url_for('static', filename='image/shap_plot.png') }}" alt="Image 2">
+        </div>
+    </div>
+    
+</body>
+
+</html>

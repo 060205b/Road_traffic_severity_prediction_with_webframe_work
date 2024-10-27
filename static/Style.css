@@ -1,0 +1,99 @@
+/* Body Styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    background: url('static/image/image1.jpg') no-repeat center center fixed; /* Use forward slashes */
+    background-size: cover; /* Ensures the image covers the entire background */
+    color: #282525;
+    display: flex;
+    flex-direction: column; /* Arranges elements in a column */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures full height of viewport */
+    margin: 0; /* Removes default margin */
+}
+
+/* Transparent Form Container */
+.result-container {
+    background: rgba(185, 174, 174, 0.8); /* Adjusted for transparency */
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 60%; /* Makes the container width responsive */
+    margin-bottom: 30px; /* Added spacing below the form */
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+}
+
+/* Form Controls */
+.form-control {
+    background: rgba(158, 156, 155, 0.9);
+    font-size: 14px;
+}
+
+/* Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h1 {
+    color: #121212;
+}
+
+/* Plot Section */
+.plot-container-wrapper {
+    display: flex;
+    justify-content: space-around; /* Plots side by side */
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px; /* Adds space between plots */
+}
+
+.plot-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Keeps the transparency */
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 45%; /* Controls width for each plot */
+    flex: 1; /* Ensure the plots take up equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plot-container h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Responsive Image */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #4d9aed;
+    border-color: #4594e8;
+}
+
+/* Spinner for dynamic loading (hidden by default) */
+.spinner-border {
+    display: none;
+    margin-left: 10px;
+    color: #4691e2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .plot-container-wrapper {
+        flex-direction: column; /* Stack the plots vertically on small screens */
+    }
+    .plot-container {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+}
