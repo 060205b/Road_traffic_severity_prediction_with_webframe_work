@@ -41,12 +41,13 @@ Set Up a Virtual Environment (optional but recommended)
  venv/bin/activate  # For macOS/Linux
  venv\Scripts\activate  # For Windows
 
-Run the Flask Application
+**Run the Flask Application**
+
 python app.py
 
 The application will run on http://127.0.0.1:5000/. Open this link in your browser.
 
-**Dependencies******
+**Dependencies**
 
 Flask: To build the web application
 scikit-learn: For machine learning model building and tuning
@@ -56,7 +57,7 @@ SHAP: For model interpretation and explanation
 LIME: For model interpretation and explanation
 Pickle: To save and load machine learning models
 
-**Videos of Web Application******
+**Videos of Web Application**
 
 Home Page (Prediction Form)
 Prediction Result
